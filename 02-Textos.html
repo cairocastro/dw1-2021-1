@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatação de textos</title>
+    <!-- Tudo que está dentro de style é CSS (serve para mudar o texto
+        visualmente)-->
+    <style> 
+        /*fazendo elemento ficar em linha*/
+        /*p {display: inline;} coloca tudo que esta no <p> na mesma linha*/
+        address{ 
+                 /*background: yellow;(coloca cor amarela no fundo)*/
+                 display: inline;
+                 font-style: normal; /*tira o italico*/
+                 text-decoration: underline;/*sublinhado*/
+                }
+         strong{ 
+                color: red;
+                }
+         mark{
+             
+             background-color: turquoise;
+         }
+
+    </style> 
+</head>
+<body>
+    <h1>Formatação de textos</h1>
+    
+    <!--tag <u> = underline (sublinhado) (não usar)
+        Usar tag "semântica" <address> (endereço) no lugar da tag <U>, pois ela quebra
+        linha e faz com que o robô idexador do google decifre este 
+        02 trechos são endereços / nossos textos apartir do html5
+        tem que ser legíveis para pessoas e máquinas
+        Existem tags de bloco e de linha. a de bloco quebra linha-->
+    
+        <p>Orkutilson morava na<address> Rua do Sobe e Desce,
+       333, </address> e seu e-mail era <address>orkutilson@gmail.com.</address>
+    </p>
+    <!-- tag <i> italico (visual apenas)
+        tag <b> (bold) negrito (visual apenas)-->
+    
+            <p>Ele estudava em uma <b>escola estadual</b> e sua materia
+         preferida era <i>Matematica</i>
+    </p>
+    <!--tag <strong> mais importante (SEMÂNTICO) Forte em ingles
+        tag <em> enfase (enfhasis) (SEMÂNTICO) Alem de ser visual, serve
+        tambem para compreensão na maquina como textos mais importantes-->
+    
+        <p>Ele estudava em uma <strong>escola estadual</strong> e sua materia
+        preferida era <em>Matematica</em>
+    </p>
+    
+    <P>Ele também gosta de usar <mark>caneta marca texto</mark> 
+       para destacar os trechos mais importantes do seu trabalho.
+    </P>
+     
+    <!--tag <strike> traço através do texto (tachado) Obsoleto não usar-->
+        
+        <p>Sua Professora achava que ele era <strike>meio burro</strike>
+            não nuito inteligente, já que sempre tinha dificuldade nas provas.
+        </p>
+    <!--tag <del> texto apagado (Semantico)-->
+        
+        <p>Sua Professora achava que ele era <del>meio burro</del>
+            não nuito inteligente, já que sempre tinha dificuldade nas provas.
+        </p>
+    <!--tag <ins> contrario de <del> texto acrescentado depois (Semantico)-->
+        
+        <p>Depois que fez a recuperação, sua nota foi para 6,7<ins> o 
+            que foi o suficiente para sua aprovação </ins>
+        </p>
+    <!--<sub> Texto subscrito
+        <sup> texto sobescrito (superscript)-->
+        <p>Orkutilson tambem gostava de fórmulas. Suas preferidas
+            eram H<sub>2</sub>O e E = mc<sup>2</sup>
+        </p> 
+</body>
+</html>
