@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens</title>
+    <style>
+        /*Regras iniciadas com # se aplicam ao elemento com id de mesmo nome*/
+        #logo{
+            width: 100%; /*A imagem ocupará 100% da largura diponível*/
+            max-width: 360px /*largura máxima em pixels;*/
+            min-width: 100px /*largura minima em pixels;*/
+        }
+        figcaption{
+            font-family: calibri, Arial, sans;
+            font-style: italic;
+        }
+        figure{
+            text-align: center;
+            background-image: url(light-carbonfiber.png);
+        }
+        body{/*imagem de fundo da página. por padrão a imagem se repete automaticamente para cobrir todo o fundo*/
+           
+            background-image: url(light-carbonfiber.png);
+        }
+        body{
+            background-image: url(metal.jpg);
+        }
+    </style>
+</head>
+<body>
+    <!--Atributos da tag <img> (imagem)
+    src (source)-> o caminho para o arquivo de imagem que será exibido
+    alt (texto alternativo) Um texto que será exibido no lugar da imagem caso  o respectivo arquivo não seja encontrado-->
+    
+        <img id="logo" src="apptiva-logo.png" alt="Logotipo da empresa Apptiva">
+     <!--<figure> para quando as imagens precisam de legenda-->
+    <figure> 
+        <img src="distance-education-1000px.jpg" alt="Eduacação a Distância title="Venha estudar conosco!">
+        <!--Legenda da imagem (semântico) pode vir antes ou depois da imagem-->
+        <figcaption>A apptiva oferece as melhores tecnologias para Educação a distancia. Faça como esta aluna</figcaption>
+    </figure>
+    <!--Regras de CSS também podem ser atribuídos a um elemento por meio do atributo style-->
+    <img style="width:50%; border:1px solid blue" src="svg-logo.svg" alt="Logotipo do formato SVG">
+</body>
+</html>
