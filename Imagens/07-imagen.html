@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imagens</title>
+    <link rel="stylesheet" href="img/html.ico">
     <style>
         /*Regras iniciadas com # se aplicam ao elemento com id de mesmo nome*/
         #logo{
@@ -43,5 +44,17 @@
     </figure>
     <!--Regras de CSS também podem ser atribuídos a um elemento por meio do atributo style-->
     <img style="width:50%; border:1px solid blue" src="svg-logo.svg" alt="Logotipo do formato SVG">
+    <!--A tag <img> (imagem) pertence ao grupo dos elementos de linha, ou seja varios <img> em sequencia, havendo largura suficiente, serão exibidos na mesma linha.
+        
+    Já atag <div> (divisão) pertence ao grupo dos elementos de bloco. Cada elemento deste grupo ocupará, por padrão, toda a largura disponivel, deslocando os demais para baixo.
+    -->
+    <div style="background-color: yellow;">
+        <img src="apptiva-icon.png" alt="Icone do apptiva">
+    </div>
+    <!--Via CSS, é possivel fazer um elemento de linha se comportar como um elemento de bloco-->
+    
+    <img style="display: block" src="apptiva-icon.png" alt="Icone do apptiva">
+    
+    <img src="apptiva-icon.png" alt="Icone do apptiva">
 </body>
 </html>
