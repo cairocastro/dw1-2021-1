@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araras</title>
+</head>
+<body>
+    <h1>Imagens das araras de forma dinâmica</h1>
+
+    <p>Exibir a imagem das araras de forma dinâmica, trocando
+    entre os tamanhos P, M e G conforme a largura da janela do navegador mude.</p>
+
+    <picture>
+        <!-- É bom sempre colocar o max-width um pouco maior que a imagem para compensar as margens
+            do documento -->
+        <source media="(max-width: 630px)" srcset="araras-p.jpg" type="image/jpeg">
+        <source media="(max-width: 1030px)" srcset="araras-m.jpg" type="image/jpeg">
+        <img src="araras-g.jpg" alt="Imagem grande">
+    </picture>
+
+</body>
+</html>
