@@ -1,14 +1,34 @@
 
+/*@import, quando existem devem ser o primeiro item de um arquivo CSS (não é recomendado usar mais de 02 fontes no site*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/*CSS reset*/
 *{ /*todos os elementos*/
     padding:0;
     margin:0;
+    /*Exemplo de familia de fonte sem serifa
+    font-family: Calibri,Arial,sans; */
+    
+    /*Exemplo de familia de fonte com serifa
+    font-family: Georgia,'Times New Roman',serif; (Entre haspas somente fonte com nome composto)*/
+
+    /*Exemplo de familia de fonte MONOESPAÇADA
+    font-family: Consolas, 'Courier New', monospace;*/
+
+    /*Familia de fontes da web (webfonts) */
+    font-family: Raleway,Calibri,Arial,sans;
 }
 header{
     background-color: #550000;
     padding:10px 20px;
 }
 nav ul li {
-    display: inline-block;
-    /*margin:10px;*/
-    background-color: coral;
+    display: inline-block; /*Deixa o menu na horizontal*/
+    margin:10px;
+    
+}
+nav{
+    background-color: #ff7f2a;/*cor de fundo*/
+    color: #ffffff;/*cor de texto*/
 }
