@@ -1,7 +1,14 @@
-
 /*@import, quando existem devem ser o primeiro item de um arquivo CSS (não é recomendado usar mais de 02 fontes no site*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+/*Definição de variaveis*/
+:root{ /* cores que podem ser usados em todo css atraves da chamada de variaveis*/
+    --cor-primaria:#550000;
+    --cor-secundaria:#FF7F2A;
+    --cor-fundo-clara:#DDDDDD;
+    --cor-fundo-escura:#BBBBBB;
+    --cor-texto-clara:#FFFFFF;
+    --cor-texto-escura:#777777;/*digitos repetidos são tons de cinza até #999999, quando acaba começa em #AAAAAA até #FFFFFF que é branco, quanto mais póximo do #000000 mais escuro a fonte*/
+}
 
 /*CSS reset*/
 *{ /*todos os elementos*/
@@ -18,9 +25,23 @@
 
     /*Familia de fontes da web (webfonts) */
     font-family: Raleway,Calibri,Arial,sans;
+    
+}
+html{
+    font-size: 16px ;
+}
+/*Cor de todos os links do site*/
+a{
+    color:var(--cor-primaria);
+    text-decoration: none;/*sem sublinhado*/
+}
+a:hover{ /*mouse passando em cima do link*/
+    color:var(--cor-secundaria);
+    text-decoration: underline; /*volta o sublinhado*/
+
 }
 header{
-    background-color: #550000;
+    background-color: var(--cor-primaria);
     padding:10px 20px;
 }
 nav ul li {
@@ -29,6 +50,49 @@ nav ul li {
     
 }
 nav{
-    background-color: #ff7f2a;/*cor de fundo*/
-    color: #ffffff;/*cor de texto*/
+    background-color:var(--cor-secundaria);/*cor de fundo*/
+    color:var(--cor-texto-clara);/*cor de texto*/
 }
+
+#content{ /* Cerquila "#" refere-se sempre a uma div*/
+    background-color:var(--cor-fundo-clara);
+    padding: 20px; /* espaçamento interno*/
+    
+    display: flex;/*este elemento e seu filhos usarão flexbox, ficarão em linha*/
+    flex-direction: row;/*os filhos ficarão em linha*/
+}
+section {
+  background-color:var(--cor-texto-clara);  
+  padding:10px; /*separar os titulos da section*/
+  margin-bottom:20px; /*separar as sections umas das outras*/
+  border-radius: 10px; /*arredondar as bordas das sections*/
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.25);/*Sombra na section (drop-down shadow)*/
+  flex-grow:1 ; /*unidade de largura(padrão) pegou 1 parte da tela apenas*/
+}
+#principal{
+    flex-grow: 3;/* Pegou 3 partes da tela de largura contra 1 parte da de cima */
+}  
+#secundario {
+      margin-left: 20px; /* separar as sections*/
+      background-color: #BBBBBB;
+  }
+  section article {
+      margin: 24px 0; /*24px - Top/bottom, 0 - left/right; separar os articles*/
+  }
+  section > h1{ /* ">" Apenas os h1 que são filhos diretos de section*/
+      /*Deixar o texto em maiusculos*/
+      text-transform: uppercase;
+      color: var(--cor-secundaria)
+  }
+  article > h1{ /* Só os h1 que são filhos diretos de article*/
+    
+    margin-bottom: 6px; /*separar os h1 do p*/
+
+  }
+  article > h1 > a{ /*Só os "a"(links) que estao dentro do h1*/
+    font-size: 1.5rem; /*1.5px o temanho da fonte do elemento raiz(html)*/
+
+  }
+  article > p{ /*Só os p que estão dentro do article*/
+      color:var(--cor-texto-escura);
+  }
