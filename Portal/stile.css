@@ -7,6 +7,7 @@
     --cor-fundo-clara:#DDDDDD;
     --cor-fundo-escura:#BBBBBB;
     --cor-texto-clara:#FFFFFF;
+    --cor-secundaria-clara:#FFAF7B;
     --cor-texto-escura:#777777;/*digitos repetidos são tons de cinza até #999999, quando acaba começa em #AAAAAA até #FFFFFF que é branco, quanto mais póximo do #000000 mais escuro a fonte*/
 }
 
@@ -54,7 +55,7 @@ nav{
     color:var(--cor-texto-clara);/*cor de texto*/
 }
 
-#content{ /* Cerquila "#" refere-se sempre a uma div*/
+#content{ /* Cerquilha "#" refere-se sempre a uma div*/
     background-color:var(--cor-fundo-clara);
     padding: 20px; /* espaçamento interno*/
     
@@ -64,17 +65,19 @@ nav{
 section {
   background-color:var(--cor-texto-clara);  
   padding:10px; /*separar os titulos da section*/
-  margin-bottom:20px; /*separar as sections umas das outras*/
+  margin-bottom:20px; /*separar o que esta dentro das sections uns dos outras*/
   border-radius: 10px; /*arredondar as bordas das sections*/
   box-shadow: 3px 3px 3px rgba(0,0,0,0.25);/*Sombra na section (drop-down shadow)*/
   flex-grow:1 ; /*unidade de largura(padrão) pegou 1 parte da tela apenas*/
 }
 #principal{
-    flex-grow: 3;/* Pegou 3 partes da tela de largura contra 1 parte da de cima */
+    /*flex-grow: 3; Pegou 3 partes da tela de largura contra 1 parte da de cima */
+    width: 75%;
 }  
 #secundario {
       margin-left: 20px; /* separar as sections*/
       background-color: #BBBBBB;
+      width: 25%;
   }
   section article {
       margin: 24px 0; /*24px - Top/bottom, 0 - left/right; separar os articles*/
@@ -96,3 +99,40 @@ section {
   article > p{ /*Só os p que estão dentro do article*/
       color:var(--cor-texto-escura);
   }
+article > h2{
+    font-size: 0.8rem;
+    text-transform: uppercase;/*todas as letras em maiusculas*/
+}
+.destaque{
+    background-color: var(--cor-secundaria-clara);
+    padding:24px;
+    border-radius: 6px; /*Bordas levemente arredondadas;*/
+}    
+.destaque  p{ /* todos os p que estao em destaque*/
+    color:#000;/*quando são numeros repetidos pode ser apenas 3 digitos*/
+    font-size: 1.5rem;
+}
+.destaque h1 > a{
+    font-size: 2.5rem;/*duas vezes e meia o tamanho normal do texto*/
+}
+.destaque > h2{
+    font-size: 1rem;
+}
+.destaque img{ /*todas as imagens dentro de destaque ficarao com este tamanho*/
+    width:450px; /*redimenciona o tamanho das foto para 450px*/
+    margin-right: 24px;/*separa a imagem do texto em 24px*/
+    border-radius: 6px; /*arredonda as bordas da imagem*/
+    
+}
+.foto-texto{
+    display:flex;
+    display-direction:row;/*os filhos ficarao em linha*/
+}
+#secundario > aside >img{
+    display:block;
+    margin: 0 auto;/*margin auto sem margem a esquerda e a direita, centraliza o elemento quando este é diplay block */
+}
+#secundario > aside >h1 > a{
+    font-size: 1rem;
+    color: #000;
+}
