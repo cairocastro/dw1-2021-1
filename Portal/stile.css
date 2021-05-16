@@ -62,27 +62,27 @@ nav{
     display: flex;/*este elemento e seu filhos usarão flexbox, ficarão em linha*/
     flex-direction: row;/*os filhos ficarão em linha*/
 }
-section {
+main, aside { /* estas regras serão para main e aside*/
   background-color:var(--cor-texto-clara);  
-  padding:10px; /*separar os titulos da section*/
+  padding:24px; /*separar os titulos da section*/
   margin-bottom:20px; /*separar o que esta dentro das sections uns dos outras*/
   border-radius: 10px; /*arredondar as bordas das sections*/
   box-shadow: 3px 3px 3px rgba(0,0,0,0.25);/*Sombra na section (drop-down shadow)*/
   flex-grow:1 ; /*unidade de largura(padrão) pegou 1 parte da tela apenas*/
 }
-#principal{
+main{
     /*flex-grow: 3; Pegou 3 partes da tela de largura contra 1 parte da de cima */
     width: 75%;
 }  
-#secundario {
+aside {
       margin-left: 20px; /* separar as sections*/
       background-color: #BBBBBB;
       width: 25%;
   }
-  section article {
+  main article, aside article {/*article que estão dentro de main ou aside*/
       margin: 24px 0; /*24px - Top/bottom, 0 - left/right; separar os articles*/
   }
-  section > h1{ /* ">" Apenas os h1 que são filhos diretos de section*/
+  main > h1, aside > h1{ /* ">" Apenas os h1 que são filhos diretos de main e de aside*/
       /*Deixar o texto em maiusculos*/
       text-transform: uppercase;
       color: var(--cor-secundaria)
@@ -128,11 +128,36 @@ article > h2{
     display:flex;
     display-direction:row;/*os filhos ficarao em linha*/
 }
-#secundario > aside >img{
+aside > article >img{
     display:block;
     margin: 0 auto;/*margin auto sem margem a esquerda e a direita, centraliza o elemento quando este é diplay block */
+    border-radius: 4px; /*Borda arredondada*/
 }
-#secundario > aside >h1 > a{
+aside > article > h1 > a{
     font-size: 1rem;
     color: #000;
+    
+}
+aside > article > h1{
+    margin-top: 6px; /*separa a foto de folhas do texto abaixo*/
+}
+footer{
+    background-color: var(--cor-primaria);
+    padding:24px;
+    color: #FFFFFF;
+    display:flex; /* container para varias funçoes, tipo alinhamento em linha*/
+    flex-direction: row; /* regra do flexbox alinhamento em linha*/
+    align-content: space-around;/*coloca espaço automaticamente entre os itens de um flexbox, antes no meio e depois*/
+}
+footer a{
+    color:#FFFFFF;
+    
+}
+footer ul li {
+    display: inline-block; /*Coloca os itens de uma lista na horizontal*/
+    /*margin: 0 6px; top/down = 0 / esquerda = 12px para distanciar uma palavra da outra*/
+    padding: 0 6px; /*em cima e embaixo = 0 e nas laterais 6px*/
+    border-right: 1px solid #FFFFFF; /*coloca um traço na lateral da palavra*/
+    
+
 }
