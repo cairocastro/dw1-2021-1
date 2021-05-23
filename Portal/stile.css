@@ -26,7 +26,9 @@
 
     /*Familia de fontes da web (webfonts) */
     font-family: Raleway,Calibri,Arial,sans;
+    font-size:16px;
     
+    box-sizing: border-box;/*Faz com que bordas e margens sejam consideradas no tamanho total do elemento*/
 }
 html{
     font-size: 16px ;
@@ -44,7 +46,32 @@ a:hover{ /*mouse passando em cima do link*/
 header{
     background-color: var(--cor-primaria);
     padding:10px 20px;
+    display: flex;
+    justify-content: space-between;
 }
+#social{
+    background-color: transparent; /*Tira a cor de fundo*/
+    display: flex;
+    align-items: center;
+}
+#social img{
+    width:32px;
+}
+#social a{
+    color:#FFFFFF;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+}
+#social a span{
+    margin-left: 6px;
+    display:none; /*Esconder o texto dos links*/
+}
+#social a:hover span{
+    display: inline;/*Mostra novamente o texto a passar o mouse*/
+}
+
 nav ul li {
     display: inline-block; /*Deixa o menu na horizontal*/
     margin:10px;
@@ -54,8 +81,26 @@ nav{
     background-color:var(--cor-secundaria);/*cor de fundo*/
     color:var(--cor-texto-clara);/*cor de texto*/
 }
+#menu{
+    padding: 0 20px;
+}
+#menu li {
+    margin:10px 0;
 
-#content{ /* Cerquilha "#" refere-se sempre a uma div*/
+}
+#menu a{
+    /*background-color: yellow;*/
+    height: 100%;
+    padding:10px 20px;
+    color:#FFFFFF;
+    transition: 300ms;
+    background-color: var(--cor-secundaria);
+}
+#menu a:hover{
+    filter:brightness(0.8); /*Diminui o brilho em 20% deixando mais escuro*/
+    text-decoration: none;
+}
+#content{ /* Cerquilha "#" refere-se sempre a uma div - Se aplica a tudo que está dentro da "div content" ao main ao aside etc.*/
     background-color:var(--cor-fundo-clara);
     padding: 20px; /* espaçamento interno*/
     
@@ -69,15 +114,17 @@ main, aside { /* estas regras serão para main e aside*/
   border-radius: 10px; /*arredondar as bordas das sections*/
   box-shadow: 3px 3px 3px rgba(0,0,0,0.25);/*Sombra na section (drop-down shadow)*/
   flex-grow:1 ; /*unidade de largura(padrão) pegou 1 parte da tela apenas*/
+  max-width: 100%;/*largura máxima limitada a largura do pai, pois estava estourando*/
 }
 main{
     /*flex-grow: 3; Pegou 3 partes da tela de largura contra 1 parte da de cima */
     width: 75%;
 }  
 aside {
-      margin-left: 20px; /* separar as sections*/
+      margin-left: 20px; /* margem esquerda para separar os elementos*/
       background-color: #BBBBBB;
       width: 25%;
+      
   }
   main article, aside article {/*article que estão dentro de main ou aside*/
       margin: 24px 0; /*24px - Top/bottom, 0 - left/right; separar os articles*/
@@ -120,18 +167,19 @@ article > h2{
 }
 .destaque img{ /*todas as imagens dentro de destaque ficarao com este tamanho*/
     width:450px; /*redimenciona o tamanho das foto para 450px*/
-    margin-right: 24px;/*separa a imagem do texto em 24px*/
+    margin-right: 24px;/*separa a imagem do texto em 24px, cria margem direita*/
     border-radius: 6px; /*arredonda as bordas da imagem*/
-    
+    max-width: 100%; /*largura máxima limitada a largura do pai, pois estava estourando a imagem do casamento*/
 }
 .foto-texto{
     display:flex;
-    display-direction:row;/*os filhos ficarao em linha*/
+    flex-direction:row;/*os filhos ficarão em linha na horizontal*/
 }
 aside > article >img{
     display:block;
     margin: 0 auto;/*margin auto sem margem a esquerda e a direita, centraliza o elemento quando este é diplay block */
     border-radius: 4px; /*Borda arredondada*/
+    max-width: 100%; /*largura máxima limitada a largura do pai, pois estava estourando a imagem das folhas e do homem fumante.*/
 }
 aside > article > h1 > a{
     font-size: 1rem;
@@ -139,7 +187,7 @@ aside > article > h1 > a{
     
 }
 aside > article > h1{
-    margin-top: 6px; /*separa a foto de folhas do texto abaixo*/
+    margin-top: 6px; /*Coloca margem superior, separando a foto de folhas do texto abaixo*/
 }
 footer{
     background-color: var(--cor-primaria);
@@ -147,7 +195,8 @@ footer{
     color: #FFFFFF;
     display:flex; /* container para varias funçoes, tipo alinhamento em linha*/
     flex-direction: row; /* regra do flexbox alinhamento em linha*/
-    align-content: space-around;/*coloca espaço automaticamente entre os itens de um flexbox, antes no meio e depois*/
+    /*align-content: space-around;/coloca espaço automaticamente entre os itens de um flexbox, na vertical*/
+    justify-content: space-around;/*coloca espaço automaticamente entre os itens de um flexbox, na horizontal*/
 }
 footer a{
     color:#FFFFFF;
@@ -157,7 +206,71 @@ footer ul li {
     display: inline-block; /*Coloca os itens de uma lista na horizontal*/
     /*margin: 0 6px; top/down = 0 / esquerda = 12px para distanciar uma palavra da outra*/
     padding: 0 6px; /*em cima e embaixo = 0 e nas laterais 6px*/
-    border-right: 1px solid #FFFFFF; /*coloca um traço na lateral da palavra*/
-    
+    border-right: 2px solid #FFFFFF; /*coloca um traço na lateral da palavra*/
+}   
 
+/* Tirar a borda direita do ultimo li "!" */
+footer ul li:last-child {
+    border-right: none;
 }
+
+footer img{
+    width:200px; /*largura máxima do rodapé */
+    height: 100%;/*altura máxima do rodapé */
+}
+/*Regras para larguras especiais de tela*/
+@media screen and (max-width:1020px){ /*Breakpoint (ponto de quebra OBS. só vai funcionar depois que a tela atingir a largura de 1020px, e tem que colocar esta regra sempre no final devido ao efeito cascata do CSS, pois se tiver mais de uma regra para o mesmo elemento ele sempre executa o que vem por último.*/
+    main{
+        width: 60%;
+    }
+    aside{
+        width: 40%;
+    }
+    .foto-texto{
+        display:flex;
+        flex-direction:column;/*os filhos ficarão em coluna na vertical*/
+    }
+    .destaque img{ /*todas as imagens dentro de destaque ficarao com este tamanho*/
+        margin-right:0px; /*margem direita cancelada*/
+        margin-bottom: 24px;/*margem inferior / mudou o valor da margem direita para margem inferior*/
+    }  
+}
+    @media screen and (max-width:800px){ /* Segundo Breakpoint, pois o aside vai ter que ir para baixo*/
+        /*Colocar o menu em um botão*/
+        
+        #content{ /*Se aplicaa tudo que está dentro da "div content" ao main e ao aside etc.*/
+        flex-direction: column; /*Os filhos ficarão em coluna, na vertical*/
+        }
+        main{
+            width: 120%; /* O que está dentro de main vai ocupar toda a largura do pai*/
+        }   
+        aside{
+            margin-left: 0; /*Anular margem esquerda do aside, pois era 24x */
+            width: 100%; /* O que está dentro de aside vai ocupar toda a largura do pai*/
+              
+        }
+        aside > article > h1{
+            text-align: center;
+        }
+        .destaque img {
+            /* Centralizar a imagem*/
+            margin-left: auto; /*Divide as margens proporcionalmente*/
+            margin-right: auto;/*Divide as margens proporcionalmente*/
+        }
+        footer {
+            flex-direction: column; /*coloca todos em coluna*/
+        }
+        footer > *{/*Todos os filhos diretos do footer*/
+            margin-bottom: 12x; /*margem inferior para dar espaçamento entre os itens*/
+        } 
+        footer ul li: :first-child{ /*Só o primeiro filho li(first-child)*/
+            padding-left:0;
+        }
+        footer address {
+            text-align:right;   
+        }
+        @media screen and (max-width:640px){ /*Adaptação para tela de celular*/
+            /*A FAZER: colocar o logo principal e os icones de redes sociais em coluna*/
+            
+        }
+    }

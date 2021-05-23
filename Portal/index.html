@@ -7,35 +7,58 @@
     <title>Quebrada On line</title>
     <link rel="stylesheet" href="stile.css">
     
-    <!--Links retirados do site fivicom.io respectico a imagem criada lá-->
+    <!--Links retirados do site fivicom.io respectivo a imagem criada lá-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     
-    <!--Teve que que acrexcentar este link para funcionar o favicom-->
+    <!--Teve que que acrescentar este link para funcionar o favicom-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
     <body>
         <header> <!-- Cabeçalho -->
             <img id="logo" src="img/qol-logo-300px.png" alt="Quebrada Online">
+        
+            <nav id="social"><!--<nav>representa uma seção de uma página que aponta para outras páginas ou para outras áreas da página, ou seja, uma seção com links de navegação.-->
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="img/facebook-64x64.png" alt="Facebook">
+                            <span>/quebrada.online</span> <!--<span>é um conteiner genérico em linha para conteúdo fraseado-->
+                        </a>
+                    </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/instagram-64x64.png" alt="Facebook">
+                                <span>/quebrada.online</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/whatsapp-64x64.png" alt="Facebook">
+                                <span>/(16)98765-4321</span>
+                            </a>
+                        </li>
+                </ul>
+            </nav>
         </header>
-        <nav><!-- Menu -->
+          <nav id="menu"><!-- Menu -->
             <ul>
-                <li>Home</li>
-                <li>Geral</li>
-                <li>Politica</li>
-                <li>Esportes</li>
-                <li>Entretenimento</li>
-                <li>Social</li>
-                <li>Tecnologia</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Geral</a></li>
+                <li><a href="#">Politica</a></li>
+                <li><a href="#">Esportes</a></li>
+                <li><a href="#">Entretenimento</a></li>
+                <li><a href="#">Social</a></li>
+                <li><a href="#">Tecnologia</a></li>
             </ul>
         </nav>
-        <div id="content"> <!--Area de conteudo-->
-            <main><!--Divisão Principal do site-->
-                <!--section-> Agrupador de conteudos semelhantes / Dentro da section, espera-se ter um título-->
-                <h1>Noticias</h1>
-                    <article class="destaque"> <!--Representa um artigo ou noticia-->
+        <div id="content"> <!--Area de conteudo - <div> é um container genérico para conteúdo de fluxo. Ele pode ser utilizado para agrupar elementos para fins de estilos (usando class ou id), ou porque eles compartilham valores de atributos, como lang. Ele deve ser utilizado somente quando não tiver outro elemento de semântica (tal como <article> ou <nav>).-->
+            
+            <main><!--Divisão Principal do site <main> define o conteúdo principal dentro do <body> em seu documento ou aplicação. Entende-se como conteúdo principal aquele relacionado diretamente com o tópico central da página ou com a funcionalidade central da aplicação.-->
+                    <h1>Noticias</h1>
+                    <article class="destaque"> <!--<article> representa uma composição independente em um documento, página, aplicação, ou site, ou que é destinado a ser distribuido de forma independente ou reutilizável, por exemplo, em sindicação-->
                         <h2>Social</h2>
                         <h1><a href="#">Tião da Venda e Carla manicure se casam após 15 anos de noivado</a></h1>
                         <div class="foto-texto">
@@ -63,7 +86,7 @@
                         </p>
                     </article>
             </main>
-                <aside><!---->
+                <aside><!--<aside> representa uma seção de uma página que consiste de conteúdo que é tangencialmente relacionado ao conteúdo do seu entorno, que poderia ser considerado separado do conteúdo.-->
                     <article>
                         <img src="img/Folhas.png" alt="Fotos de folhas" title="Foto: sohail">
                         <h1><a href="#">Mulher do verdureiro emagrece 30kg tomando chá e choca a quebrada; SAIBA MAIS</a></h1>
@@ -75,13 +98,14 @@
                 </aside> 
             </main>
         </div>
-        <footer><!--Rodapé, vai telefone, endereço-->
+        <footer><!--Rodapé, vai telefone, endereço - <footer> representa um rodapé para o seu sectioning content (conteúdo de seção) mais próximo ou sectioning root elemento (ou seja, seu parente mais próximo <article> , <aside> , <nav> , <section> , <blockquote> , <body> , <details> , <fieldset> , <figure> , <td> (en-US)).-->
+            <img src="img/qol-logo-branco-300px.png" alt="Quebrada Online">
             <ul>
                 <li><a href="#">Quem somos</a></li>
                 <li><a href="#">Nossa missão</a></li>
                 <li><a href="#">Comercial</a></li>
             </ul>
-            <address>
+            <address><!--<address> fornece informações de contato para seu ancestral <article> ou <body> mais próximo; no segundo caso, ele se aplica ao documento inteiro. ... Deve incluir o nome da pessoa, grupo, ou organização para qual as informações de contato se referem.-->
                 Rua do Sobe e Desce, 33<br>
                 Morro Alto de Cima/SP <br>
                 <a href="tel:+551677771111">(16)7777-1111</a> <br>
